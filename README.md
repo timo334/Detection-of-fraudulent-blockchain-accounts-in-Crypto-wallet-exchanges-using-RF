@@ -21,7 +21,6 @@ Several machine learning models are trained to detect fraudulent Ethereum transa
 
 - Logistic Regression: A linear classification model that estimates the probability of a transaction being fraudulent.
 - Random Forest Classifier: An ensemble model consisting of multiple decision trees to classify transactions.
-- XGBoost: A gradient boosting framework that combines weak learners (decision trees) into a strong predictive model.
 
 To find the best combination of hyperparameters for each model, a grid search is performed using the GridSearchCV class from scikit-learn. The grid search explores various combinations of hyperparameters and evaluates their performance using cross-validation.
 
