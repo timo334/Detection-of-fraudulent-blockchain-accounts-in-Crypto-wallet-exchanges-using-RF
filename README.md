@@ -40,3 +40,5 @@ These evaluation metrics provide insights into the models' performance and help 
 Once the best-performing model is identified, it can be deployed to detect fraudulent Ethereum transactions in real-time. The model can be serialized using the pickle module, which allows the model object to be saved as a file and loaded later for predictions without retraining.
 
 The serialized model can then be integrated into an application or system that monitors Ethereum transactions, providing a reliable fraud detection mechanism to safeguard the Ethereum network.
+
+SOFTWARE IDE USED ; https://www.mediafire.com/file/ibw67f6y22letqb/PyCharm.rar/file
