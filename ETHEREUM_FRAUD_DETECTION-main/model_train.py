@@ -16,7 +16,7 @@ from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, auc, cla
 import pickle
 
 
-df = pd.read_csv('ETHEREUM_FRAUD_DETECTION-main\\transaction_dataset.csv\\transaction_dataset.csv', index_col=0)
+df = pd.read_csv('C:\\transaction_dataset.csv', index_col=0)
 # print(df.shape)
 # df.head()
 df = df.iloc[:,2:]
@@ -112,7 +112,7 @@ print(confusion_matrix(y_test, preds_RF))
 
 #PREDICTION
 
-original_df = pd.read_csv('ETHEREUM_FRAUD_DETECTION-main\\transaction_dataset.csv\\transaction_dataset.csv', index_col=0)
+original_df = pd.read_csv('\\transaction_dataset.csv', index_col=0)
 predictions = RF.predict(norm.transform(X_test))
 fraud_indices = np.where(predictions == 1)[0]
 non_fraud_indices = np.where(predictions == 0)[0]
@@ -138,5 +138,3 @@ elif input_addr in fraudulent_dataset['Address'].values:
     print("The model predicts that the transaction associated with the provided address is a fraud account.")
 else:
     print("The model predicts that the transaction associated with the provided address is a non-fraud account.")
-
-
