@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np 
+import numpy as np
 import seaborn as sns
 import warnings
 warnings.filterwarnings('ignore')
@@ -16,7 +16,7 @@ from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve, auc, cla
 import pickle
 
 
-df = pd.read_csv('C:\\transaction_dataset.csv', index_col=0)
+df = pd.read_csv(r'C:\Users\odekt\Desktop\transaction_dataset_fixed.csv', index_col=0)
 # print(df.shape)
 # df.head()
 df = df.iloc[:,2:]
@@ -112,15 +112,15 @@ print(confusion_matrix(y_test, preds_RF))
 
 #PREDICTION
 
-original_df = pd.read_csv('\\transaction_dataset.csv', index_col=0)
+original_df = pd.read_csv(r'C:\Users\odekt\Desktop\transaction_dataset_fixed.csv', index_col=0)
 predictions = RF.predict(norm.transform(X_test))
 fraud_indices = np.where(predictions == 1)[0]
 non_fraud_indices = np.where(predictions == 0)[0]
 
-fraudulent_addresses = original_df.iloc[X_test.index[fraud_indices]]['Address'] 
+fraudulent_addresses = original_df.iloc[X_test.index[fraud_indices]]['Address']
 fraudulent_dataset = pd.DataFrame({'Address': fraudulent_addresses})
 
-non_fraudulent_addresses = original_df.iloc[X_test.index[non_fraud_indices]]['Address'] 
+non_fraudulent_addresses = original_df.iloc[X_test.index[non_fraud_indices]]['Address']
 non_fraudulent_dataset = pd.DataFrame({'Address': non_fraudulent_addresses})
 
 print(fraudulent_dataset)
